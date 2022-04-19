@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 1.2rem;
+      }
+      img {
+        float: left; /*FLoat coloca o item ao lado do elemento*/
+      }
+      #i1 {
+        float: left;
+      }
+      #i2 {
+        float: right;
+      }
+      p {
+        clear: right; /*Impede que os elementos flutuem ao seu redor*/
+      }
+      div {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: coral;
+        overflow: auto; /*Insere os items flutuando na div*/
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        float: right;
+        padding: 10px;
+        background-color: magenta;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Float</h2>
+    <p>
+      Imagem flutuando à esqueda, a direita está sendo impedida de flutuar pelo
+      elemento
+    </p>
+    <div>
+      <img
+        id="i1"
+        src="https://yt3.ggpht.com/ytc/AKedOLQeBwLRqgdlcXICbNT8bxv43a7BKqyVToMMiAQ3qw=s900-c-k-c0x00ffffff-no-rj"
+        alt=""
+        height="150px"
+      />
+      <!-- <img
+      id="i2"
+      src="https://yt3.ggpht.com/ytc/AKedOLQeBwLRqgdlcXICbNT8bxv43a7BKqyVToMMiAQ3qw=s900-c-k-c0x00ffffff-no-rj"
+      alt=""
+      height="150px"
+    /> -->
+      <p>
+        Float coloca o item flutuando ao lado definido na
+        imagem---------------------------------------------------------ad quod
+        animi fugit velit dignissimos facilis. Laboriosam.Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Labore atque corrupti aut, cumque
+        amet delectus assumenda accusamus laborum dicta repudiandae eius illo ad
+        quod animi fugit velit dignissimos facilis. Laboriosam.Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Labore atque corrupti aut,
+        cumque amet delectus assumenda accusamus laborum dicta repudiandae eius
+        illo ad quod animi fugit
+      </p>
+    </div>
+    <hr />
+    <h2>Menu</h2>
+    <ul>
+      <li>Home</li>
+      <li>Cursos</li>
+      <li>Contato</li>
+    </ul>
+  </body>
+</html>

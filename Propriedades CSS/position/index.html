@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 1.2rem;
+        font-family: sans-serif;
+      }
+
+      .static {
+        position: static;
+        /* Não se movimenta */
+      }
+      .relative {
+        position: relative;
+        top: 15px;
+        left: 50px;
+        bottom: 30px;
+        /* Relativo a posição inicial do elemento e pode ser movimentado*/
+      }
+      .fixed {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        /* Desloca em relação à janela latitude longitude*/
+      }
+      .absolute {
+        position: absolute;
+        left: 0; /*Recebe dimensões*/
+      }
+      .sticky {
+        position: sticky;
+        top: 0; /*distancia máxima de algum lugar*/
+      }
+      .quadrado {
+        width: 100px;
+        height: 100px;
+        /* display: inline; Não tem dimensões */
+        display: inline-block; /* permite colocar lado a lado*/
+      }
+      .ret {
+        width: 100px;
+        height: 500px;
+        margin-top: 10px;
+      }
+      .overflowauto {
+        width: 200px;
+        overflow: auto; /*Scroll para não transbordar*/
+      }
+      .bg-red {
+        background-color: red;
+      }
+      .bg-blue {
+        background-color: blue;
+      }
+      .bg-green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>display</h2>
+    <div class="quadrado bg-blue">CSS Sobre Display</div>
+    <div class="quadrado bg-red">CSS sobre Display</div>
+    <hr />
+    <h2>position</h2>
+
+    <div class="quadrado bg-blue static">Estático não se move</div>
+    <div class="quadrado bg-red relative">Relativo ao local de origem</div>
+    <div class="quadrado bg-red fixed">Position fixed no canto viewport</div>
+    <hr />
+    <h2>position absolute</h2>
+    <div class="ret bg-red relative">
+      Não pode ser static pois quebra o css tentando buscar o pai que não é
+      estatico (Pai)
+      <div class="quadrado bg-blue absolute">
+        Relativo ao pai ou body inicia como static (Filho)
+      </div>
+    </div>
+    <hr />
+    <h2>sticky</h2>
+    <div class="bg-blue ret overflowauto">
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-green sticky">Trava na pose</div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-green sticky">Chama no zoom da um close</div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+      <div class="quadrado bg-red"></div>
+    </div>
+  </body>
+</html>

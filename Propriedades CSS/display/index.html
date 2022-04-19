@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h2>Display de divs</h2>
+    <div style="background-color: blue;">
+      <div>Div normal</div>
+      <div>
+        Outra História
+        <div style="background-color: red; width: 500px; height: 40px;">De dentro //display block consigo modificar dimensões</div>
+        Continuação
+      </div>
+    </div>
+    <div>
+      <p style="margin: 0;">Parágrafo normal sem margem</p>
+      <p style="margin: 0;">Continuação sem margem</p>
+    </div>
+    <h2>Display de span</h2>
+
+    <p style="background-color: aqua;">Parágrafo <span style="background-color: green; width: 700px;display: inline-block;">Span no meio, não muda tamanho pois é inline|  (Com inline-block ele aumenta)</span> continuação do parágrafo</p>
+
+    <h2>Display de divs não se usa div dentro de parâgrafo ou display block pois quebra execução</h2>
+
+    <p style="background-color: blue;">Parágrafo <div style="background-color: red;">div no meio</div> continuação do parágrafo ficou sem estilo o mesmo vale para paragrafo dentro de outro paragrafo</p>
+
+    <h2>Display de Imagens</h2>
+
+    <p>Parágrafo <img style="visibility: hidden;" src="https://yt3.ggpht.com/ytc/AKedOLQeBwLRqgdlcXICbNT8bxv43a7BKqyVToMMiAQ3qw=s900-c-k-c0x00ffffff-no-rj" alt="" height="50px"> com visibility:hidden ele ocupa mas não mostra continuação</p>
+
+    <p>Parágrafo <img style="display: none;" src="https://yt3.ggpht.com/ytc/AKedOLQeBwLRqgdlcXICbNT8bxv43a7BKqyVToMMiAQ3qw=s900-c-k-c0x00ffffff-no-rj" alt="" height="50px"> com display:none ele não renderiza</p>
+    
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 1.2rem;
+        font-family: sans-serif;
+      }
+      #container {
+        color: yellow;
+        background-color: blue;
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>O overflow delitimita o tamanho do conteudo à tag pai</p>
+    <div id="container">
+      O Overflow é quando o texto ultrapassa o tamanho do componente e pode ser
+      controlado pela prop overflow que por padrão permitirá que o texto saia do
+      componente.
+    </div>
+    <div style="margin-top: 50px; overflow: hidden" id="container">
+      Quando é utilizado hidden ele ocultará a mensagem trucando o que passar
+      sadjisdjiajsdiajsidaisjdiajsidjaisjijdias###asdijaushduashdahs###.
+    </div>
+    <div style="margin-top: 50px; overflow: scroll" id="container">
+      Pode também ser utilizado o Scroll para permitir que o texto seja
+      totalmente inserido criando scroll alternando X ou Y.
+    </div>
+  </body>
+</html>
