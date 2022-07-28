@@ -18,6 +18,9 @@ function createUser(name) {
 
 const listUser = () => console.log(users)
 
-createUser("Beltrano").then(listUser).catch((error) => {
-  console.log(error.msg)
-})
+async function run() {
+  await createUser("Beltrano")
+  listUser()
+}
+
+run()
