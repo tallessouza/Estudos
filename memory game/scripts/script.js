@@ -3,30 +3,15 @@ const BACK = "card_back"
 const CARD = "card"
 const ICON = "icon"
 
-let techs = [
-  'bootstrap',
-  'electron',
-  'firebase',
-  'html',
-  'javascript',
-  'jquery',
-  'mongo',
-  'node',
-  'react',
-  'css'
-]
-let cards = null
-
 startGame()
 
 function startGame() {
-  cards = createCards(techs)
-  shuffleCards(cards)
-  initializeCards(cards)
+  initializeCards(game.createCards())
 }
 
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard")
+  gameBoard.innerHTML = ''
   cards.forEach(card => {
     let cardElement = document.createElement('div')
     cardElement.id = card.id
@@ -59,40 +44,36 @@ function createCardFace(face, card, element) {
   element.appendChild(cardElementFace)
 }
 
-function shuffleCards(cards) {
-  let current = cards.length
-  let random = 0
+function flipCard() {
+  if (game.setCard(this.id)) {
 
-  while (current !== 0) {
-    random = Math.floor(Math.random() * current)
-    current--
-    [cards[random], cards[current]] = [cards[current], cards[random]]
+    this.classList.add("flip")
+    if (game.secondCard) {
+      if (game.checkMatch()) {
+        game.clearCards()
+        if (game.checkGameOver()) {
+          let gameOverlay = document.getElementById("gameOver")
+          gameOverlay.style.display = 'flex'
+        }
+      } else {
+
+        let firstCardView = document.getElementById(game.firstCard.id)
+        let secondCardView = document.getElementById(game.secondCard.id)
+
+        setTimeout(() => {
+          firstCardView.classList.remove('flip')
+          secondCardView.classList.remove('flip')
+          game.unflipCards()
+        }, 1000);
+      }
+    }
+
   }
 }
 
-function createCards(techs) {
-  let cards = []
-  techs.forEach((tech) => {
-    cards.push(createPairFromTech(tech))
-  })
-  return cards.flatMap(pair => pair)
-}
-
-function createPairFromTech(tech) {
-  return [{
-    id: createIdWithTech(tech),
-    icon: tech,
-    flipped: false
-  }, {
-    id: createIdWithTech(tech),
-    icon: tech,
-    flipped: false
-  }]
-}
-function createIdWithTech(tech) {
-  return tech + parseInt(Math.random() * 1000)
-}
-
-function flipCard() {
-  this.classList.add("flip")
+function restart() {
+  game.clearCards()
+  startGame()
+  let gameOverlay = document.getElementById("gameOver")
+  gameOverlay.style.display = 'none'
 }
